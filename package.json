@@ -1,0 +1,29 @@
+{
+	"name": "testcarinduswebdriverio",
+	"version": "1.0.0",
+	"description": "This is a tech test about CA for rindus",
+	"main": "index.js",
+	"scripts": {
+		"lint": "eslint . --fix --max-warnings=0",
+		"format": "prettier . --write"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.43.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-node": "^4.1.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.2",
+		"prettier": "^2.8.8"
+	},
+	"lint-staged": {
+		"*.js": "eslint --cache --fix"
+	}
+}
