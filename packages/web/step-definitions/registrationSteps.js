@@ -7,7 +7,7 @@ const names = ["Raul", "Rindus", "Maria", "Francisco", "Paco", "Antonio"];
 const surnames = ["Perez", "Gonzalez", "Garcia", "Jimenez", "Moreno", "Caro"];
 
 Given(/^a (.*) user within the home page$/, async (user) => {
-	console.log(`User ${user} is on home page`)
+	console.log(`User ${user} is on home page`);
 	await homePage.openHomePage();
 });
 
@@ -72,18 +72,16 @@ Then('Account is created successfully', async () => {
 	expect(await registrationPage.welcomeMessageIsShown()).toBe(true);
 });
 
+
 //8 caracteres bug en vez de 6
 //CON 1 en pass no se enciende ni 111
 //en el login aaaaaaaa@test 
 //&&@2.com entra en el login
+//datos personale
 
-
-//mailinator 
+ 
 //readme  
 //android lunes
-//simulacion lunes 
-//meter suites  domingo
-//login domingo
 //certificados
 
 

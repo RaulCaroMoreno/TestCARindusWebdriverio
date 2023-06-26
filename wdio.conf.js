@@ -22,12 +22,18 @@ exports.config = {
 	// then the current working directory is where your `package.json` resides, so `wdio`
 	// will be called from there.
 	//
-	//specs: ['./packages/web/features/**/*.feature'],
-	specs: ['./packages/web/features/login.feature'],
+	specs: ['./packages/web/features/**/*.feature'],
 	// Patterns to exclude.
 	exclude: [
 		// 'path/to/excluded/files'
 	],
+
+	suites: {
+        login: 
+		['./packages/web/features/login.feature'],
+		registration: 
+		['./packages/web/features/registration.feature'],
+    },
 	//
 	// ============
 	// Capabilities
@@ -53,8 +59,11 @@ exports.config = {
 	capabilities: [
 		{
 			// capabilities for local browser web tests
-			browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
+			browserName: 'chrome'
 		},
+		{
+			browserName: 'MicrosoftEdge'
+		}
 	],
 	//
 	// ===================
@@ -63,7 +72,7 @@ exports.config = {
 	// Define all options that are relevant for the WebdriverIO instance here
 	//
 	// Level of logging verbosity: trace | debug | info | warn | error | silent
-	logLevel: 'error',
+	logLevel: 'silent',
 	//
 	// Set specific log levels per logger
 	// loggers:
@@ -103,7 +112,7 @@ exports.config = {
 	// Services take over a specific job you don't want to take care of. They enhance
 	// your test setup with almost no effort. Unlike plugins, they don't add new
 	// commands. Instead, they hook themselves up into the test process.
-	services: ['chromedriver', 'geckodriver', 'edgedriver'],
+	services: ['chromedriver', 'edgedriver'],
 
 	// Framework you want to run your specs with.
 	// The following are supported: Mocha, Jasmine, and Cucumber
@@ -167,8 +176,10 @@ exports.config = {
 	 * @param {object} config wdio configuration object
 	 * @param {Array.<Object>} capabilities list of capabilities details
 	 */
-	// onPrepare: function (config, capabilities) {
-	// },
+	 onPrepare: function (config) {
+		config.suite = []
+		config.suite = [process.argv[4]];
+	 },
 	/**
 	 * Gets executed before a worker process is spawned and can be used to initialise specific service
 	 * for that worker as well as modify runtime environments in an async fashion.

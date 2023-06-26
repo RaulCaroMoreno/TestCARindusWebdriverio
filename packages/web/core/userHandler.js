@@ -1,16 +1,19 @@
+const fs = require('fs');
+const  path = require("path");
+
 class UserHandler {
+
+	USER_RESOURCES_PATH = "resources"
+
 	get accountButton() {
 		return $('button[data-qa=HeaderAccountButton]');
 	}
 
-	async clickOnAccountButton() {
-		await this.click(this.accountButton);
+	getUserInfoFromJson(userName) { 
+		const rawdata = fs.readFileSync(path.join(__dirname, "../../../", this.USER_RESOURCES_PATH + "/" + userName.replace(/"/g,"") + ".json"));
+		return JSON.parse(rawdata);
 	}
-
-	async openHomePage() {
-		await browser.url('https://www.c-and-a.com/es/es/shop');
-		await browser.maximizeWindow();
-	}
+ 
 }
 
-module.exports = new HomePage();
+module.exports = new UserHandler();

@@ -12,13 +12,25 @@ class HomePage extends PageBase {
 		return $("//button[@id='onetrust-accept-btn-handler']");
 	}
 
+	get headlineWelcome() {
+		return $$("//span[@data-qa='Headline']").find( async (elem) => {
+			return await elem.isDisplayed();
+		});
+	}
+
 	async acceptCookiesButton() {
 		await this.click(this.cookiesButton);
 	}
 
+	async clickHeadline() {
+		await this.click(this.headlineWelcome);
+	}
+
 	async openHomePage() {
 		await browser.url('https://www.c-and-a.com/es/es/shop');
-		await browser.maximizeWindow();
+		if(await browser.isMobile === false) {
+			await browser.maximizeWindow();
+		}
 		if(await this.elementIsShown(this.cookiesButton, {timeout:2500}) === true) {
 			await this.acceptCookiesButton();
 		}

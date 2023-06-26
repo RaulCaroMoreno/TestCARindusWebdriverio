@@ -7,21 +7,20 @@ Feature: User login
     Then login fields are loaded correctly
 
   Scenario Outline: Incorrect email
-    When "registered" tries to login with incorrect email <email>
-    Then <error> message is shown
-  Examples:
-      | email | error |
-      | 222@ | Vaya, los datos introducidos son incorrectos. |
-      | &&@2.com | Vaya, los datos introducidos son incorrectos. |
-      | aa@2. | Vaya, los datos introducidos son incorrectos. |
+      When "registered" user tries to login with incorrect email <email>
+      Then Message about <error> login is shown
+    Examples:
+        | email | error |
+        | 222@ | Introduce una dirección de correo electrónico válida. |
+        | 22 | Introduce una dirección de correo electrónico válida. |
 
-Scenario: Login with incorrect values
-    When "registered" tries to create the account with incorrect data
-    Then Error message about incorrect data is shown
+  Scenario: Login with incorrect values
+      When "registered" tries to login with incorrect data
+      Then Error message about incorrect login data introduced
 
- Scenario: Login with correct values
-    When "registered" tries to create the account with correct data
-    Then Succesful login message is shown
+  Scenario: Login with correct values
+      When "RegisteredUser" user tries to login with correct data
+      Then Welcome login message is displayed
 
 
   
