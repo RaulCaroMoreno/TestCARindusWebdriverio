@@ -26,6 +26,7 @@ Both executions share the same code.
     1. Suite = login to execute login suite. For ex: ```` npm run wdio login ````
     2. Suite = registration to execute registration suite ```` npm run wdio registration ````
 
+Check execution in VIDEO.
 
  # How to execute Mobile mode
    ```` npm run wdioAndroid SUITE ````.
@@ -34,6 +35,7 @@ Both executions share the same code.
     1. Suite = login to execute login suite. For ex: ```` npm run wdioAndroid login ````
     2. Suite = registration to execute registration suite ```` npm run wdioAndroid registration ````
 
+Check execution in VIDEO.
 # Scenarios
    Scenarios for Login.feature:
    ````
