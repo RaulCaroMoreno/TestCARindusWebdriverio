@@ -20,7 +20,7 @@ class HomePage extends PageBase {
 	}
  
 	async clickHeadline() {
-		await this.click(this.headlineWelcome);
+		awaidddt this.click(this.headlineWelcome);
 	}
 
 	async openHomePage() {
