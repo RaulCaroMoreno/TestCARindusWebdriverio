@@ -14,13 +14,14 @@ class HomePage extends PageBase {
 	get headlineWelcome() {
 		return $$("//span[@data-qa='Headline']").find((elem) => elem.isDisplayed());
 	}
+	eeeeee
 
 	async acceptCookiesButton() {
 		await this.click(this.cookiesButton);
 	}
  
 	async clickHeadline() {
-		awaidddt this.click(this.headlineWelcome);
+		await this.click(this.headlineWelcome);
 	}
 
 	async openHomePage() {
