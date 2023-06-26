@@ -1,5 +1,4 @@
-class UserHandler{
-	
+class UserHandler {
 	get accountButton() {
 		return $('button[data-qa=HeaderAccountButton]');
 	}
@@ -9,7 +8,7 @@ class UserHandler{
 	}
 
 	async openHomePage() {
-		await browser.url("https://www.c-and-a.com/es/es/shop");
+		await browser.url('https://www.c-and-a.com/es/es/shop');
 		await browser.maximizeWindow();
 	}
 }

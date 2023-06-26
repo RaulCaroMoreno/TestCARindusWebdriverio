@@ -9,8 +9,8 @@
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly",
 		"$": true,
-		"browser" : true,
-		"expect" : true
+		"browser": true,
+		"expect": true
 	},
 	"parserOptions": {
 		"ecmaVersion": 2018

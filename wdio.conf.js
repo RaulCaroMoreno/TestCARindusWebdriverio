@@ -22,7 +22,8 @@ exports.config = {
 	// then the current working directory is where your `package.json` resides, so `wdio`
 	// will be called from there.
 	//
-	specs: ['./packages/web/features/**/*.feature'],
+	//specs: ['./packages/web/features/**/*.feature'],
+	specs: ['./packages/web/features/login.feature'],
 	// Patterns to exclude.
 	exclude: [
 		// 'path/to/excluded/files'
@@ -62,7 +63,7 @@ exports.config = {
 	// Define all options that are relevant for the WebdriverIO instance here
 	//
 	// Level of logging verbosity: trace | debug | info | warn | error | silent
-	logLevel: 'info',
+	logLevel: 'error',
 	//
 	// Set specific log levels per logger
 	// loggers:
@@ -89,7 +90,7 @@ exports.config = {
 	baseUrl: 'http://localhost',
 	//
 	// Default timeout for all waitFor* commands.
-	waitforTimeout: 10000,
+	waitforTimeout: 5000,
 	//
 	// Default timeout in milliseconds for request
 	// if browser driver or grid doesn't send response

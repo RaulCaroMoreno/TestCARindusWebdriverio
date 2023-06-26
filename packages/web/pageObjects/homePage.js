@@ -1,25 +1,30 @@
 const PageBase = require('./pageBase');
+const myAccountFrame = require('./frame/myAccountFrame');
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class HomePage extends PageBase {
-	
 
-	//mter esto en un modal con su carpeta aparte 
-	//poner el modal como atributo
-	get accountButton() {
-		return $('button[data-qa=HeaderAccountButton]');
+	constructor() {
+		super();
+		this.accountFrame = myAccountFrame;
 	}
 
-	async clickOnAccountButton() {
-		await this.click(this.accountButton);
+	get cookiesButton() {
+		return $("//button[@id='onetrust-accept-btn-handler']");
+	}
+
+	async acceptCookiesButton() {
+		await this.click(this.cookiesButton);
 	}
 
 	async openHomePage() {
-		await browser.url("https://www.c-and-a.com/es/es/shop");
+		await browser.url('https://www.c-and-a.com/es/es/shop');
 		await browser.maximizeWindow();
+		if(await this.elementIsShown(this.cookiesButton, {timeout:2500}) === true) {
+			await this.acceptCookiesButton();
+		}
 	}
+
+	
 }
 
 module.exports = new HomePage();
