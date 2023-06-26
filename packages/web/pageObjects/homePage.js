@@ -10,7 +10,7 @@ class HomePage extends PageBase {
 	get cookiesButton() {
 		return $("//button[@id='onetrust-accept-btn-handler']");
 	}
-eeee
+eeeeeeee
 	get headlineWelcome() {
 		return $$("//span[@data-qa='Headline']").find((elem) => elem.isDisplayed());
 	}
