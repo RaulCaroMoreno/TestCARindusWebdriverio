@@ -95,17 +95,3 @@ Then('Error about complete empty fields is shown', async () => {
 Then('Account is created successfully', async () => {
 	expect(await registrationPage.welcomeMessageIsShown()).toBe(true);
 });
-
-// 8 caracteres bug en vez de 6
-// CON 1 en pass no se enciende ni 111
-// en el login aaaaaaaa@test
-// &&@2.com entra en el login
-// datos personale
-
-// readme
-// android lunes
-// certificados
-
-// METER CHECKBOXES PARA CLICKAR
-
-// METER OPCIONES PRIMERO
