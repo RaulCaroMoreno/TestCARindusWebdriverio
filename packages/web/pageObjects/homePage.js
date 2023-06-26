@@ -10,11 +10,10 @@ class HomePage extends PageBase {
 	get cookiesButton() {
 		return $("//button[@id='onetrust-accept-btn-handler']");
 	}
-
+eeee
 	get headlineWelcome() {
 		return $$("//span[@data-qa='Headline']").find((elem) => elem.isDisplayed());
 	}
-	eeeeee
 
 	async acceptCookiesButton() {
 		await this.click(this.cookiesButton);
