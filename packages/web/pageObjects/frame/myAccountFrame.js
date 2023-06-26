@@ -1,7 +1,6 @@
 const PageBase = require('../pageBase');
 
 class MyAccountFrame extends PageBase {
-
 	get accountButton() {
 		return $('button[data-qa=HeaderAccountButton]');
 	}
@@ -9,13 +8,13 @@ class MyAccountFrame extends PageBase {
 	get registerNowAnchor() {
 		return $("//a[@href='/es/es/shop/account/register']");
 	}
-	
+
 	get emailInputField() {
-		return $("#myaccount_login_email");
+		return $('#myaccount_login_email');
 	}
-	
+
 	get passwordInputField() {
-		return $("#myaccount_login_password");
+		return $('#myaccount_login_password');
 	}
 
 	get loginSubmitButton() {
@@ -23,7 +22,9 @@ class MyAccountFrame extends PageBase {
 	}
 
 	get loginErrorMessage() {
-		return $("div=¡Vaya! La dirección de correo electrónico o la contraseña indicada no es correcta.");
+		return $(
+			'div=¡Vaya! La dirección de correo electrónico o la contraseña indicada no es correcta.'
+		);
 	}
 
 	get welcomeNotificationMessage() {
@@ -35,39 +36,39 @@ class MyAccountFrame extends PageBase {
 	}
 
 	async setPasswordValue(value) {
-		await this.setValue(this.passwordInputField,value);
+		await this.setValue(this.passwordInputField, value);
 	}
 
 	async openRegisterPage() {
 		await this.click(this.registerNowAnchor);
 	}
- 
-	async openMyAccountTab() { 
+
+	async openMyAccountTab() {
 		await this.click(this.accountButton);
 	}
 
-	async emailFieldIsShown() { 
-		return await this.elementIsShown(this.emailInputField);
+	async emailFieldIsShown() {
+		return this.elementIsShown(this.emailInputField);
 	}
 
-	async passwordFieldIsShown() { 
-		return await this.elementIsShown(this.passwordInputField);
+	async passwordFieldIsShown() {
+		return this.elementIsShown(this.passwordInputField);
 	}
 
-	async loginErrorMessageIsShown() { 
-		return await this.elementIsShown(this.loginErrorMessage);
-	}
-	
-	async loginSubmitButtonIsShown() { 
-		return await this.elementIsShown(this.loginSubmitButton);
+	async loginErrorMessageIsShown() {
+		return this.elementIsShown(this.loginErrorMessage);
 	}
 
-	async clickLoginSubmitButton() { 
-		return await this.click(this.loginSubmitButton);
+	async loginSubmitButtonIsShown() {
+		return this.elementIsShown(this.loginSubmitButton);
+	}
+
+	async clickLoginSubmitButton() {
+		return this.click(this.loginSubmitButton);
 	}
 
 	async welcomeNotificationMessageIsShown() {
-		return await this.elementIsShown(this.welcomeNotificationMessage);
+		return this.elementIsShown(this.welcomeNotificationMessage);
 	}
 
 	async login(username, password) {
@@ -75,7 +76,6 @@ class MyAccountFrame extends PageBase {
 		await this.setPasswordValue(password);
 		await this.clickLoginSubmitButton();
 	}
-
 }
 
 module.exports = new MyAccountFrame();

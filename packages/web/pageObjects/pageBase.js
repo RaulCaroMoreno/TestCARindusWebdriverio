@@ -10,6 +10,7 @@ module.exports = class PageBase {
 		await element.waitForDisplayed();
 		await element.click();
 	}
+
 	/**
 	 * Basic function to double click to an element
 	 */
@@ -17,6 +18,7 @@ module.exports = class PageBase {
 		await element.waitForDisplayed();
 		await element.doubleClick();
 	}
+
 	/**
 	 * Basic function to set value to an element checking first that the element  exists
 	 */
@@ -25,6 +27,7 @@ module.exports = class PageBase {
 		await element.clearValue();
 		await element.setValue(value);
 	}
+
 	/**
 	 * Basic function to check if the element is displayed
 	 */
@@ -33,7 +36,7 @@ module.exports = class PageBase {
 		try {
 			await element.waitForDisplayed(options);
 			isShown = await element.isDisplayed();
-		} catch( e ) {
+		} catch (e) {
 			isShown = false;
 		}
 		return isShown;

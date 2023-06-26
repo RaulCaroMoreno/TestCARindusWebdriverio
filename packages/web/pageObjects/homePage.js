@@ -18,9 +18,7 @@ class HomePage extends PageBase {
 	async acceptCookiesButton() {
 		await this.click(this.cookiesButton);
 	}
-
-	hole = e
-
+ 
 	async clickHeadline() {
 		await this.click(this.headlineWelcome);
 	}

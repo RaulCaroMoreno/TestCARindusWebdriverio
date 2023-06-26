@@ -9,6 +9,7 @@
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly",
 		"$": true,
+		"$$": true,
 		"browser": true,
 		"expect": true
 	},

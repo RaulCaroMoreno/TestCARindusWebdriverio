@@ -52,19 +52,7 @@ exports.config = {
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
-    /*
-    capabilities : [{
-		platformName: "android", 
-		'appium:name': `[Android] Test Execution`,
-		'appium:build': 'Wdio appium test',
-        'appium:deviceName': 'Pixel 4',
-        'appium:appActivity' : 'com.google.android.apps.chrome.Main',
-        'appium:appPackage': 'com.android.chrome',
-		'appium:platformVersion': '13',
-		'appium:noReset': true,
-		'appium:newCommandTimeout': 240
-	  }],
-      */
+  
       capabilities: [{
         platformName: 'Android', // or "iOS"
         browserName : 'chrome',
@@ -159,7 +147,7 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+	reporters: ['spec', ['allure', { outputDir: 'allure-results' }]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -201,12 +189,10 @@ exports.config = {
      * @param {object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    onPrepare: function (config) {
-        if(config.suite !== undefined) {
+    onPrepare: function (config) { 
             config.suite = []
             config.suite = [process.argv[4]];
-
-        }
+        
 	 },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service

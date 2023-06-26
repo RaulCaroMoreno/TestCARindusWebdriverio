@@ -4,15 +4,15 @@
 	"description": "This is a tech test about CA for rindus",
 	"main": "index.js",
 	"scripts": {
-		"lint": "eslint . --fix --max-warnings=0",
-		"format": "prettier . --write",
+		"lint": "eslint packages --fix --max-warnings=0",
+		"format": "prettier packages --write",
 		"wdio": "wdio run ./wdio.conf.js",
 		"wdioAndroid": "wdio run ./wdioAndroid.conf.js"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"devDependencies": {
+	"dependencies": {
 		"@types/webdriverio": "^5.0.0",
 		"@wdio/allure-reporter": "^8.11.0",
 		"@wdio/cli": "^8.11.2",

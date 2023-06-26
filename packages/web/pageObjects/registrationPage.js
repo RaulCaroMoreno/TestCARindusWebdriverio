@@ -4,73 +4,72 @@ const Page = require('./pageBase');
  * sub page containing specific selectors and methods for a specific page
  */
 class RegistrationPage extends Page {
-	
 	get registerForm() {
-		return $("form[data-qa=RegisterAccountForm]");
+		return $('form[data-qa=RegisterAccountForm]');
 	}
 
 	get firstNameField() {
-		return $("input[id=firstName]");
+		return $('input[id=firstName]');
 	}
 
 	get lastNameField() {
-		return $("input[id=lastName]");
+		return $('input[id=lastName]');
 	}
 
 	get emailAddressField() {
-		return $("input[id=emailAddress]");
+		return $('input[id=emailAddress]');
 	}
 
 	get passwordField() {
-		return $("input[id=password]");
+		return $('input[id=password]');
 	}
 
 	get suscriptionCheckboxField() {
-		return $("label[data-qa=Checkbox]");
+		return $('label[data-qa=Checkbox]');
 	}
-	
+
 	get createAccountButtonField() {
 		return $("//button[@data-qa='LoadingButton']");
-	} 
-	
+	}
+
 	get emptyFieldWarning() {
-		return $("span=Este campo no puede estar vacío.");
-	} 
+		return $('span=Este campo no puede estar vacío.');
+	}
 
 	get welcomeMessage() {
 		return $("section[data-qa='AccountWelcomeTeaser']");
-	} 
+	}
 
 	get headLine() {
-		return $("div[data-qa=Headline]");
-	} 
+		return $('div[data-qa=Headline]');
+	}
 
 	get genderRadioButtons() {
-		return $("div[data-qa=Headline]");
-	} 
+		return $('div[data-qa=Headline]');
+	}
 
 	async registeringFormIsShown() {
-		return await this.elementIsShown(this.registerForm);
+		return this.elementIsShown(this.registerForm);
 	}
 
 	async firstNameFieldIsShown() {
-		return await this.elementIsShown(this.firstNameField);
+		return this.elementIsShown(this.firstNameField);
 	}
 
 	async lastNameFieldIsShown() {
-		return await this.elementIsShown(this.lastNameField);
+		return this.elementIsShown(this.lastNameField);
 	}
 
 	async emailFieldIsShown() {
-		return await this.elementIsShown(this.emailAddressField);
+		return this.elementIsShown(this.emailAddressField);
 	}
 
 	async passwordIsShown() {
-		return await this.elementIsShown(this.passwordField);
+		return this.elementIsShown(this.passwordField);
 	}
 
 	async suscriptionCheckboxIsShown() {
-		return await this.elementIsShown(this.suscriptionCheckboxField);
+		return this.elementIsShown(this.suscriptionCheckboxField);
 	}
 
 	async clickCreateAccountButton() {
@@ -78,7 +77,7 @@ class RegistrationPage extends Page {
 	}
 
 	async emptyFieldWarningIsShown() {
-		return await this.elementIsShown(this.emptyFieldWarning);
+		return this.elementIsShown(this.emptyFieldWarning);
 	}
 
 	async setFirstNameValue(value) {
@@ -92,7 +91,7 @@ class RegistrationPage extends Page {
 	async setEmailValue(value) {
 		await this.setValue(this.emailAddressField, value);
 	}
-	
+
 	async setPasswordFieldValue(value) {
 		await this.setValue(this.passwordField, value);
 	}
@@ -106,15 +105,17 @@ class RegistrationPage extends Page {
 	}
 
 	async welcomeMessageIsShown() {
-		return await this.elementIsShown(this.welcomeMessage);
+		return this.elementIsShown(this.welcomeMessage);
 	}
 
 	async errorMessageIsShown(message) {
-		return await this.elementIsShown($(`span=${message}`));
+		return this.elementIsShown($(`span=${message}`));
 	}
 
 	async tickMessageIsShown(checking) {
-		return await this.elementIsShown($(`//span[text()='${checking}']//ancestor::span//*[local-name() = 'svg']`));
+		return this.elementIsShown(
+			$(`//span[text()='${checking}']//ancestor::span//*[local-name() = 'svg']`)
+		);
 	}
 
 	async clickGenderRadioButtons(genderValue) {
@@ -122,15 +123,18 @@ class RegistrationPage extends Page {
 	}
 
 	async fillRegistrationForm(name, surname, gender) {
-		await this.clickGenderRadioButtons(gender)
+		await this.clickGenderRadioButtons(gender);
 		await this.setFirstNameValue(name);
 		await this.setLastNameValue(surname);
-		await this.setEmailValue(`${name}_${surname}${Math.random() * (100 - 0) +0}@testinator.com`);
-		await this.setPasswordFieldValue(`${name}_${surname}${Math.random() * (100 - 0) +0}@testinator.com`);
+		await this.setEmailValue(
+			`${name}_${surname}${Math.random() * (100 - 0) + 0}@testinator.com`
+		);
+		await this.setPasswordFieldValue(
+			`${name}_${surname}${Math.random() * (100 - 0) + 0}@testinator.com`
+		);
 		await this.clickSuscriptionCheckboxFieldValue();
 		await this.clickCreateAccountButton();
 	}
-
 }
 
 module.exports = new RegistrationPage();
