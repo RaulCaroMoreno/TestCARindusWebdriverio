@@ -28,6 +28,14 @@ Both executions share the same code.
 
 Check execution in VIDEO.
 
+ # Reports
+   After get some results:
+   1. Generate report: ```` npx allure generate ````.
+   2. Open report  ```` npx allure open ````.
+
+![image](https://github.com/RaulCaroMoreno/TestCARindusWebdriverio/assets/39560502/a0e0ee65-ae15-4566-a8ed-ec5055ee7a16)
+
+    
  # How to execute Mobile mode
    ```` npm run wdioAndroid SUITE ````.
 
