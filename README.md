@@ -35,6 +35,11 @@ Check execution in VIDEO.
     1. Suite = login to execute login suite. For ex: ```` npm run wdioAndroid login ````
     2. Suite = registration to execute registration suite ```` npm run wdioAndroid registration ````
 
+ # Quality checkings
+ 1. Check Javascript code with Eslint:   ```` npm run lint ````.
+ 2. Check and correct format :   ```` npm run format ````.
+    
+
 Check execution in VIDEO.
 # Scenarios
    Scenarios for Login.feature:
