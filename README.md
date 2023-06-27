@@ -39,8 +39,6 @@ Check execution in VIDEO.
  1. Check Javascript code with Eslint:   ```` npm run lint ````.
  2. Check and correct format :   ```` npm run format ````.
     
-
-Check execution in VIDEO.
 # Scenarios
    Scenarios for Login.feature:
    ````
