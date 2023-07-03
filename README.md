@@ -1,6 +1,6 @@
 # TestCARindusWebdriverio
 
-This is a tech test about CA for rindus. It has 2 kind of execution:
+This is a tech test. It has 2 kind of execution:
 1. Web execution for login&registration features in Web (Chrome and Edge).
 2. Mobile execution for Android.
 
